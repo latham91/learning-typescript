@@ -1,46 +1,23 @@
-// explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+let age: any = 25;
 
-// age = 'luigi'; // error
-age = 30;
+age = true; // valid
+console.log(age);
+age = 'hello'; // valid
+console.log(age);
+age = { name: 'luigi' }; // valid
+console.log(age);
 
-// isLoggedIn = 25; // error
-isLoggedIn = true;
-
-// arrays
-let ninjas: string[] = [] // array of strings
-
-// ninjas = [10, 23]; // error
-ninjas = ['yoshi', 'mario']; // correct
-
-// ninjas.push(23); // error
-ninjas.push('luigi'); // correct
-
-
-// union types
-let mixed: (string | number | boolean)[] = [];
-mixed.push('hello');
-mixed.push(20);
-mixed.push(false);
+let mixed: any[] = [];
+mixed.push(5); // valid
+mixed.push('mario'); // valid
+mixed.push(false); // valid
 console.log(mixed);
 
-let uid: string | number;
-uid = '123'; // correct
-uid = 123; // correct
-// uid = true; // error
+let ninja: { name: any, age: any }; 
+ninja = { name: 'yoshi', age: 25 }; // valid
+console.log(ninja);
 
+ninja = { name: 25, age: 'yoshi' }; // valid
+console.log(ninja);
 
-// objects
-let ninjaOne: object;
-ninjaOne = { name: 'yoshi', age: 30 };
-ninjaOne = []; // correct
-
-// ninjaOne = 'hello'; // error
-
-let ninjaTwo: {
-    name: string,
-    age: number,
-    beltColour: String
-};
+// Sort of reverts back to JavaScript

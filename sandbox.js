@@ -1,30 +1,18 @@
-// explicit types
-var character;
-var age;
-var isLoggedIn;
-// age = 'luigi'; // error
-age = 30;
-// isLoggedIn = 25; // error
-isLoggedIn = true;
-// arrays
-var ninjas = []; // array of strings
-// ninjas = [10, 23]; // error
-ninjas = ['yoshi', 'mario']; // correct
-// ninjas.push(23); // error
-ninjas.push('luigi'); // correct
-// union types
+var age = 25;
+age = true; // valid
+console.log(age);
+age = 'hello'; // valid
+console.log(age);
+age = { name: 'luigi' }; // valid
+console.log(age);
 var mixed = [];
-mixed.push('hello');
-mixed.push(20);
-mixed.push(false);
+mixed.push(5); // valid
+mixed.push('mario'); // valid
+mixed.push(false); // valid
 console.log(mixed);
-var uid;
-uid = '123'; // correct
-uid = 123; // correct
-// uid = true; // error
-// objects
-var ninjaOne;
-ninjaOne = { name: 'yoshi', age: 30 };
-ninjaOne = []; // correct
-// ninjaOne = 'hello'; // error
-var ninjaTwo;
+var ninja;
+ninja = { name: 'yoshi', age: 25 }; // valid
+console.log(ninja);
+ninja = { name: 25, age: 'yoshi' }; // valid
+console.log(ninja);
+// Sort of reverts back to JavaScript
