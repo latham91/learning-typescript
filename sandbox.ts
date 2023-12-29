@@ -1,11 +1,21 @@
-const character = "luigi";
+let character = 'mario';
+let age = 30;
+let isBlackBelt = false;
 
-console.log(character);
+// Typescript infers the type of the variable if it is not declared
 
-const inputs = document.querySelectorAll("input");
+// character = 20; // error
+character = 'luigi'; // ok
 
-console.log(inputs);
+// age = 'yoshi'; // error
+age = 40; // ok
 
-inputs.forEach((input) => {
-  console.log(input);
-});
+// isBlackBelt = 'yes'; // error
+isBlackBelt = true; // ok
+
+const circ = (diameter: number) => {
+    return diameter * Math.PI;
+}
+
+// console.log(circ("hello"));
+console.log(circ(7.5)); // ok
