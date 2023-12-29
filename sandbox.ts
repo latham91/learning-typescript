@@ -1,21 +1,46 @@
-let character = 'mario';
-let age = 30;
-let isBlackBelt = false;
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-// Typescript infers the type of the variable if it is not declared
+// age = 'luigi'; // error
+age = 30;
 
-// character = 20; // error
-character = 'luigi'; // ok
+// isLoggedIn = 25; // error
+isLoggedIn = true;
 
-// age = 'yoshi'; // error
-age = 40; // ok
+// arrays
+let ninjas: string[] = [] // array of strings
 
-// isBlackBelt = 'yes'; // error
-isBlackBelt = true; // ok
+// ninjas = [10, 23]; // error
+ninjas = ['yoshi', 'mario']; // correct
 
-const circ = (diameter: number) => {
-    return diameter * Math.PI;
-}
+// ninjas.push(23); // error
+ninjas.push('luigi'); // correct
 
-// console.log(circ("hello"));
-console.log(circ(7.5)); // ok
+
+// union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push('hello');
+mixed.push(20);
+mixed.push(false);
+console.log(mixed);
+
+let uid: string | number;
+uid = '123'; // correct
+uid = 123; // correct
+// uid = true; // error
+
+
+// objects
+let ninjaOne: object;
+ninjaOne = { name: 'yoshi', age: 30 };
+ninjaOne = []; // correct
+
+// ninjaOne = 'hello'; // error
+
+let ninjaTwo: {
+    name: string,
+    age: number,
+    beltColour: String
+};
