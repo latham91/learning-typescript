@@ -43,4 +43,4 @@ let ninjaTwo: {
     name: string,
     age: number,
     beltColour: String
-};
+}; // object with specific properties
